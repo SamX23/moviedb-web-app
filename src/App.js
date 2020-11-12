@@ -1,14 +1,15 @@
-import Header from "./components/Header";
+import TopNavigation from "./components/TopNavigation";
 import Body from "./components/Body";
 
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import Footer from "./components/Footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     background:
-      "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,89,255,1) 41%, rgba(1,184,236,1) 65%, rgba(159,239,255,1) 100%)",
+      "linear-gradient(90deg, rgba(4,0,70,1) 0%, rgba(19,79,115,1) 49%, rgba(0,212,255,1) 100%)",
     color: "white",
   },
 }));
@@ -24,9 +25,10 @@ function App() {
       alignItems="center"
       spacing={3}
     >
-      <Header item />
+      <Header />
       <p>Hello!!</p>
-      <Body item />
+      <Body />
+      <Footer />
     </Grid>
   );
 }

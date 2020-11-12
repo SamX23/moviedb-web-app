@@ -6,16 +6,18 @@ import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles, styled } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
-    color: "red",
+    color: "white",
     padding: "10px",
   },
-}));
+  icons: {
+    borderRadius: 0,
+    color: "#9d9d9d",
+  },
+});
 
-const headerIcons = styled(IconButton());
-
-function Header() {
+function TopNavigation() {
   const header = useStyles();
 
   return (
@@ -27,19 +29,19 @@ function Header() {
       alignItems="center"
     >
       <Grid item className="header__icons" xs={9}>
-        <IconButton>
+        <IconButton className={header.icons}>
           <HomeIcon />
           <p>Home</p>
         </IconButton>
-        <IconButton>
+        <IconButton className={header.icons}>
           <FlashOnIcon />
           <p>Trending</p>
         </IconButton>
-        <IconButton>
+        <IconButton className={header.icons}>
           <PersonOutlineIcon />
           <p>Account</p>
         </IconButton>
-        <IconButton>
+        <IconButton className={header.icons}>
           <SearchIcon />
           <p>Search</p>
         </IconButton>
@@ -51,4 +53,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default TopNavigation;

@@ -13,7 +13,7 @@ export default function Footer() {
     width: "100%",
     textAlign: "center",
     padding: "5px",
-    backgroundColor: "#c1beba",
+    backgroundColor: "black",
     "& a": {
       color: "rgb(253, 69, 69)",
       textDecoration: "none",

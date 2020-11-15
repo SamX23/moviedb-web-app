@@ -12,13 +12,18 @@ const useStyles = makeStyles({
   root: {
     color: "white",
   },
+  icons: {
+    marginLeft: ".2em",
+  },
   icon: {
     borderRadius: 0,
-    color: "#9d9d9d",
+    color: "white",
+    opacity: 0.7,
   },
   logo: {
     textAlign: "center",
     padding: "10px",
+    marginRight: ".2em",
   },
 });
 
@@ -29,12 +34,10 @@ function TopNavigation() {
     <Grid
       className={header.root}
       container
-      direction="row"
       justify="space-between"
       alignItems="center"
-      spacing={0}
     >
-      <Grid className="header__icons" item>
+      <Grid className={header.icons} item>
         <IconButton className={header.icon}>
           <HomeIcon />
           <p>Home</p>

@@ -18,7 +18,10 @@ const useStyles = makeStyles({
   icon: {
     borderRadius: 0,
     color: "white",
-    opacity: 0.7,
+    opacity: "0.7",
+    "&:hover": {
+      opacity: "1",
+    },
   },
   logo: {
     textAlign: "center",

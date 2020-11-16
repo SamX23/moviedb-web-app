@@ -2,11 +2,12 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
-import { makeStyles, styled } from "@material-ui/core/styles";
+import { styled } from "@material-ui/core/styles";
 
 const GridContainer = styled(Grid)({
   paddingTop: "1em",
   paddingBottom: "1em",
+  marginBottom: ".5em",
 });
 
 const GridItem = styled(Button)({

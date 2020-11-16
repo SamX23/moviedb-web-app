@@ -1,13 +1,12 @@
-import VideoCard from "./VideoCard";
 import NavigationBar from "./NavigationBar";
 import Grid from "@material-ui/core/Grid";
-import Card from "@material-ui/core/Card";
+import CardContainer from "./CardContainer";
 
 function Body() {
   return (
     <Grid container>
       <NavigationBar />
-      <VideoCard movie={null} />
+      <CardContainer />
     </Grid>
   );
 }

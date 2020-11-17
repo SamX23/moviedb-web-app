@@ -40,7 +40,7 @@ function TopNavigation() {
       justify="space-between"
       alignItems="center"
     >
-      <Grid className={header.icons} item>
+      <Grid className={header.icons}>
         <IconButton className={header.icon}>
           <HomeIcon />
           <p>Home</p>
@@ -58,7 +58,7 @@ function TopNavigation() {
           <p>Search</p>
         </IconButton>
       </Grid>
-      <Grid className={header.logo} item>
+      <Grid className={header.logo}>
         <h1>Movie DB</h1>
       </Grid>
     </Grid>

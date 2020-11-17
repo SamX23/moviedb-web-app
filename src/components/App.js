@@ -1,10 +1,7 @@
-import { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import { KEY, URL, DEVELOPMENT } from "../constants/environtment";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { DEVELOPMENT } from "../constants/environtment";
 import TopNavigation from "./TopNavigation";
 import Body from "./Body";
-
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -36,13 +33,11 @@ function App() {
         ) : (
           <Container width={1100}>
             <TopNavigation />
-
             <Switch>
               <Route path="/">
                 <Body />
               </Route>
             </Switch>
-
             <Footer />
           </Container>
         )}

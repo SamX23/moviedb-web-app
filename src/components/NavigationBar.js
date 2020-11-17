@@ -24,19 +24,18 @@ const GridItem = styled(Button)({
 function NavigationBar() {
   return (
     <GridContainer
-      spacing={3}
       container
       direction="row"
       justify="space-evenly"
       alignItems="center"
     >
-      <GridItem item>Trending</GridItem>
-      <GridItem item>Top Rated</GridItem>
-      <GridItem item>Action</GridItem>
-      <GridItem item>Comedy</GridItem>
-      <GridItem item>Horror</GridItem>
-      <GridItem item>Romance</GridItem>
-      <GridItem item>Mystery</GridItem>
+      <GridItem>Trending</GridItem>
+      <GridItem>Top Rated</GridItem>
+      <GridItem>Action</GridItem>
+      <GridItem>Comedy</GridItem>
+      <GridItem>Horror</GridItem>
+      <GridItem>Romance</GridItem>
+      <GridItem>Mystery</GridItem>
     </GridContainer>
   );
 }

@@ -2,7 +2,7 @@ import { KEY } from "./environtment";
 
 const API_KEY = KEY;
 
-export const fetching = {
+const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
   fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
@@ -15,3 +15,4 @@ export const fetching = {
   fetchAnimation: `/discover/movie?api_key=${API_KEY}&with_genres=16`,
   fetchTV: `/discover/movie?api_key=${API_KEY}&with_genres=10770`,
 };
+export default requests;

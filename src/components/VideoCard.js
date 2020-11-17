@@ -1,36 +1,67 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
+import {
+  Button,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@material-ui/core";
 
 const videoCard = makeStyles({
   root: {
+    backgroundColor: "transparent",
     color: "black",
-    width: "400px",
-    height: "350px",
-    padding: "20px",
-    margin: "5px",
-    transition: "transform 100ms",
-    "&:hover": {
-      transform: "scale(1.09)",
-    },
-    "& > img": {
-      width: "350px",
-      objectFit: "contain",
-    },
-    "& > p": { margin: 0 },
-    "& > h2": { marginTop: "10px" },
+    maxWidth: 400,
   },
+  media: {
+    height: 140,
+  },
+  // height: "350px",
+  // transition: "transform 100ms",
+  // "&:hover": {
+  //   transform: "scale(1.09)",
+  // },
+  // "& > img": {
+  //   width: "500px",
+  //   objectFit: "contain",
+  // },
+  // "& > p": { margin: 0 },
+  // "& > h2": { marginTop: "10px" },
+  // },
 });
 
 function VideoCard({ movie }) {
-  const style = videoCard();
+  const classes = videoCard();
 
   return (
-    <Card className={style.root}>
-      <img src="" alt="" />
-      <p>Description</p>
-      <h2>Title</h2>
-      <p>likes ....</p>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="/static/images/cards/contemplative-reptile.jpg"
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
     </Card>
   );
 }

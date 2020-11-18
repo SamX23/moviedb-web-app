@@ -1,5 +1,3 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 import Grid from "@material-ui/core/Grid";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";

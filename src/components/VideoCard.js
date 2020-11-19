@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
+import TextTruncate from "react-text-truncate";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   CardActionArea,
@@ -7,6 +8,7 @@ import {
   CardMedia,
   Typography,
 } from "@material-ui/core";
+import { ThumbUpSharp } from "@material-ui/icons";
 
 const videoCard = makeStyles({
   root: {
@@ -16,6 +18,13 @@ const videoCard = makeStyles({
   },
   media: {
     height: 140,
+  },
+
+  videoCard__stats: {
+    display: "none",
+    "& :hover": {
+      display: "block",
+    },
   },
   // height: "350px",
   // transition: "transform 100ms",
@@ -40,15 +49,25 @@ function VideoCard({ movie }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`${videoBaseUrl}${movie.backdrop_path}`}
-          title={movie.title}
+          image={`${videoBaseUrl}${movie.backdrop_path || movie.poster_path}`}
+          alt={movie.title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {movie.title}
+            {movie.title || movie.original_name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {movie.overview}
+            <TextTruncate
+              line={2}
+              element="p"
+              truncateText="..."
+              text={movie.overview}
+            />
+          </Typography>
+          <ThumbUpSharp />
+          <Typography variant="body2" color="textSecondary" component="p">
+            {movie.media_type && `${movie.media_type} -`}
+            {movie.release_date || movie.first_air_date} - {movie.vote_count}
           </Typography>
         </CardContent>
       </CardActionArea>

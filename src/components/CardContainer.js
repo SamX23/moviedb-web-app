@@ -21,9 +21,10 @@ function CardContainer({ filter }) {
   return (
     <Grid container justify="space-evenly" alignItems="center">
       <FlipMove>
-        {movies.map((movie) => (
-          <VideoCard item key={movie.id} movie={movie} />
-        ))}
+        {movies &&
+          movies.map((movie) => (
+            <VideoCard item key={movie.id} movie={movie} />
+          ))}
       </FlipMove>
     </Grid>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import requests from "../constants/requests";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
@@ -21,7 +21,7 @@ const GridItem = styled(Button)({
   },
 });
 
-function NavigationBar() {
+function NavigationBar({ setFilter }) {
   return (
     <GridContainer
       container
@@ -29,13 +29,35 @@ function NavigationBar() {
       justify="space-evenly"
       alignItems="center"
     >
-      <GridItem>Trending</GridItem>
-      <GridItem>Top Rated</GridItem>
-      <GridItem>Action</GridItem>
-      <GridItem>Comedy</GridItem>
-      <GridItem>Horror</GridItem>
-      <GridItem>Romance</GridItem>
-      <GridItem>Mystery</GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchTrending)}>
+        Trending
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchTopRated)}>
+        Top Rated
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchAction)}>
+        Action
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchComedy)}>
+        Comedy
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchHorror)}>
+        Horror
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchRomance)}>
+        Romance
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchMystery)}>
+        Mystery
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchSciFi)}>Sci-fi</GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchWestern)}>
+        Western
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchAnimation)}>
+        Animation
+      </GridItem>
+      <GridItem onClick={() => setFilter(requests.fetchTV)}>TV</GridItem>
     </GridContainer>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef } from "react";
 import Card from "@material-ui/core/Card";
 import TextTruncate from "react-text-truncate";
 import { makeStyles } from "@material-ui/core/styles";
@@ -20,10 +20,10 @@ const videoCard = makeStyles({
     height: 140,
   },
 
-  videoCard__stats: {
+  stats: {
     display: "none",
     "& :hover": {
-      display: "block",
+      display: "inline",
     },
   },
   // height: "350px",
@@ -40,12 +40,13 @@ const videoCard = makeStyles({
   // },
 });
 
-function VideoCard({ movie }) {
+const videoBaseUrl = "https://image.tmdb.org/t/p/original/";
+
+const VideoCard = forwardRef(({ movie }, ref) => {
   const classes = videoCard();
-  const videoBaseUrl = "https://image.tmdb.org/t/p/original/";
-  console.log(movie);
+
   return (
-    <Card className={classes.root}>
+    <Card ref={ref} className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -64,15 +65,21 @@ function VideoCard({ movie }) {
               text={movie.overview}
             />
           </Typography>
-          <ThumbUpSharp />
-          <Typography variant="body2" color="textSecondary" component="p">
+
+          <Typography
+            className={classes.stats}
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             {movie.media_type && `${movie.media_type} -`}
-            {movie.release_date || movie.first_air_date} - {movie.vote_count}
+            {movie.release_date || movie.first_air_date} - <ThumbUpSharp />{" "}
+            {movie.vote_count}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
   );
-}
+});
 
 export default VideoCard;

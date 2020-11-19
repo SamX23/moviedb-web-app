@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { DEVELOPMENT } from "../constants/environtment";
 import TopNavigation from "./TopNavigation";
 import Body from "./Body";
 import Container from "@material-ui/core/Container";
@@ -28,19 +27,15 @@ function App() {
         alignItems="center"
         spacing={3}
       >
-        {DEVELOPMENT !== "development" ? (
-          alert("input your Movie DB key !")
-        ) : (
-          <Container width={1100}>
-            <TopNavigation />
-            <Switch>
-              <Route path="/">
-                <Body />
-              </Route>
-            </Switch>
-            <Footer />
-          </Container>
-        )}
+        <Container width={1100}>
+          <TopNavigation />
+          <Switch>
+            <Route path="/">
+              <Body />
+            </Route>
+          </Switch>
+          <Footer />
+        </Container>
       </Grid>
     </Router>
   );

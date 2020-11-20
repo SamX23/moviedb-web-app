@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "../constants/axios";
 import VideoCard from "./VideoCard";
 import Grid from "@material-ui/core/Grid";
@@ -14,13 +14,12 @@ function CardContainer({ filter }) {
       console.log(request);
       return request;
     }
-
     fetchData();
   }, [filter]);
 
   return (
     <Grid container justify="space-evenly" alignItems="center">
-      <FlipMove>
+      <FlipMove typeName={null}>
         {movies &&
           movies.map((movie) => (
             <VideoCard item key={movie.id} movie={movie} />

@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import IconButton from "@material-ui/core/IconButton";
-import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+import { makeStyles, styled } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   root: {
@@ -28,6 +31,12 @@ const useStyles = makeStyles({
   },
 });
 
+const HomeLogo = styled(Link)({
+  textDecoration: "none",
+  color: "white",
+  opacity: "0.7",
+});
+
 function TopNavigation() {
   const header = useStyles();
 
@@ -39,10 +48,9 @@ function TopNavigation() {
       alignItems="center"
     >
       <Grid className={header.icons}>
-        <IconButton className={header.icon}>
+        <Button component={Link} to="/" className={header.icon}>
           <HomeIcon />
-          <p>Home</p>
-        </IconButton>
+        </Button>
         <IconButton className={header.icon}>
           <FlashOnIcon />
           <p>Trending</p>
@@ -57,7 +65,9 @@ function TopNavigation() {
         </IconButton>
       </Grid>
       <Grid className={header.logo}>
-        <h1>Movie DB</h1>
+        <HomeLogo to="/">
+          <h1>Movie DB</h1>
+        </HomeLogo>
       </Grid>
     </Grid>
   );

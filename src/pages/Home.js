@@ -1,10 +1,10 @@
 import { useState } from "react";
 import requests from "../constants/requests";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "../components/NavigationBar";
+import CardContainer from "../components/CardContainer";
 import Grid from "@material-ui/core/Grid";
-import CardContainer from "./CardContainer";
 
-function Body() {
+function Home() {
   const [filter, setFilter] = useState(requests.fetchTrending);
   return (
     <Grid container>
@@ -14,4 +14,4 @@ function Body() {
   );
 }
 
-export default Body;
+export default Home;

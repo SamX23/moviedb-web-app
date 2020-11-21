@@ -8,24 +8,23 @@ function CardContainer({ filter }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const request = await axios.get(filter);
-      setMovies(request.data.results);
-      console.log(request);
-      return request;
-    }
-    fetchData();
+    axios
+      .get(filter)
+      .then((e) => setMovies(e.data.results))
+      .catch((e) => console.alert(e));
   }, [filter]);
 
   return (
-    <Grid container justify="space-evenly" alignItems="center">
-      <FlipMove typeName={null}>
-        {movies &&
-          movies.map((movie) => (
-            <VideoCard item key={movie.id} movie={movie} />
-          ))}
-      </FlipMove>
-    </Grid>
+    <FlipMove
+      typeName={Grid}
+      container
+      justify="space-evenly"
+      alignItems="center"
+    >
+      {movies &&
+        movies.length > 0 &&
+        movies.map((movie) => <VideoCard item key={movie.id} movie={movie} />)}
+    </FlipMove>
   );
 }
 

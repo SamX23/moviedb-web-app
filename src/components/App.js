@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TopNavigation from "./TopNavigation";
-import Body from "./Body";
+import Home from "../pages/Home";
+import Profile from "../pages/Profile";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -9,8 +10,9 @@ import Footer from "./Footer";
 const useStyles = makeStyles({
   root: {
     background:
-      "linear-gradient(90deg, rgba(4,0,70,1) 0%, rgba(19,79,115,1) 49%, rgba(0,212,255,1) 100%)",
+      "linear-gradient(149deg, rgba(38,73,122,1) 0%, rgba(13,60,139,1) 47%, rgba(55,221,255,1) 100%)",
     color: "white",
+    paddingBottom: "3em",
   },
 });
 
@@ -25,13 +27,16 @@ function App() {
         direction="column"
         justify="center"
         alignItems="center"
-        spacing={3}
+        spacing={2}
       >
         <Container width={1100}>
           <TopNavigation />
           <Switch>
+            <Route path="/profile">
+              <Profile />
+            </Route>
             <Route path="/">
-              <Body />
+              <Home />
             </Route>
           </Switch>
           <Footer />

@@ -1,7 +1,7 @@
 import requests from "../constants/requests";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-
+import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { styled } from "@material-ui/core/styles";
 
 const GridContainer = styled(Grid)({
@@ -30,6 +30,7 @@ function NavigationBar({ setFilter }) {
       alignItems="center"
     >
       <GridItem onClick={() => setFilter(requests.fetchTrending)}>
+        <FlashOnIcon />
         Trending
       </GridItem>
       <GridItem onClick={() => setFilter(requests.fetchTopRated)}>

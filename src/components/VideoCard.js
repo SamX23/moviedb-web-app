@@ -27,7 +27,6 @@ const videoCard = makeStyles({
 });
 
 const videoBaseUrl = "https://image.tmdb.org/t/p/original/";
-
 const VideoCard = forwardRef(({ movie }, ref) => {
   const classes = videoCard();
 

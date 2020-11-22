@@ -11,7 +11,7 @@ function CardContainer({ filter }) {
     axios
       .get(filter)
       .then((e) => setMovies(e.data.results))
-      .catch((e) => console.alert(e));
+      .catch((e) => console.log(e));
   }, [filter]);
 
   return (

@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TopNavigation from "./TopNavigation";
 import Home from "../pages/Home";
-import Profile from "../pages/Profile";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -32,9 +31,6 @@ function App() {
         <Container width={1100}>
           <TopNavigation />
           <Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
             <Route path="/">
               <Home />
             </Route>

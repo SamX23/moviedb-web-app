@@ -1,10 +1,10 @@
-import React, { useState, Suspense } from "react";
+import { useState, lazy, Suspense } from "react";
 import requests from "../constants/requests";
 import Grid from "@material-ui/core/Grid";
 import Loading from "../components/Loading";
 import NavigationBar from "../components/NavigationBar";
 
-const CardContainer = React.lazy(() => import("../components/CardContainer"));
+const CardContainer = lazy(() => import("../components/CardContainer"));
 
 function Home() {
   const [filter, setFilter] = useState(requests.fetchPopular);

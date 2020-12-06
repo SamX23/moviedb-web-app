@@ -2,7 +2,7 @@ import YouTube from "react-youtube";
 
 export default function Youtube({ id }) {
   const opts = {
-    height: "350",
+    height: "221",
     width: "400",
     playerVars: {
       autoplay: 1,

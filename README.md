@@ -8,6 +8,7 @@ A simple movie database for people who only needs to know what is trending or la
 - Material UI/Icon
 - Axios
 - React Flip move
+- Youtube Trailer
 - TMDB API
 
 ## Installation

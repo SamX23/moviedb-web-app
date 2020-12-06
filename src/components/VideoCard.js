@@ -75,7 +75,7 @@ const VideoCard = forwardRef(({ movie }, ref) => {
         </Typography>
         <TextTruncate
           line={1}
-          element={Typography}
+          element="div"
           truncateText=".."
           text={movie.overview}
         />

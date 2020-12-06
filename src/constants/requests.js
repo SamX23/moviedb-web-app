@@ -1,4 +1,5 @@
 const requests = {
+  fetchSearch: process.env.REACT_APP_SEARCH,
   fetchPopular: process.env.REACT_APP_POPULAR,
   fetchTrending: process.env.REACT_APP_TRENDING,
   fetchTopRated: process.env.REACT_APP_TOPRATED,

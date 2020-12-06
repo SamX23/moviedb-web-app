@@ -17,7 +17,6 @@ const GridItem = styled(Button)({
   "&:hover": {
     opacity: 1,
     fontWeight: 600,
-    transform: "scale(1.1)",
   },
 });
 
@@ -28,6 +27,7 @@ function NavigationBar({ setFilter }) {
       direction="row"
       justify="space-evenly"
       alignItems="center"
+      id="back-to-top-anchor"
     >
       <GridItem onClick={() => setFilter(requests.fetchTrending)}>
         <FlashOnIcon />

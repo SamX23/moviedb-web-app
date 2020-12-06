@@ -3,6 +3,7 @@ import requests from "../constants/requests";
 import Grid from "@material-ui/core/Grid";
 import Loading from "../components/Loading";
 import NavigationBar from "../components/NavigationBar";
+import BackToTop from "../components/BackToTop";
 
 const CardContainer = lazy(() => import("../components/CardContainer"));
 
@@ -15,6 +16,7 @@ function Home() {
       <Suspense fallback={<Loading />}>
         <CardContainer filter={filter} />
       </Suspense>
+      <BackToTop />
     </Grid>
   );
 }

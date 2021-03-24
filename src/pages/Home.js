@@ -1,6 +1,6 @@
 import { useState, lazy, Suspense } from "react";
-import requests from "../constants/requests";
 import Grid from "@material-ui/core/Grid";
+import requests from "../constants/requests";
 import Loading from "../components/Loading";
 import NavigationBar from "../components/NavigationBar";
 import BackToTop from "../components/BackToTop";

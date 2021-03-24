@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import requests from "../constants/requests";
 import { InputBase, makeStyles } from "@material-ui/core";
+import { useState, useEffect } from "react";
+// import requests from "../constants/requests";
 
 const searchBar = makeStyles((theme) => ({
   inputRoot: {

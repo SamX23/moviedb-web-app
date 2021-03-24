@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
+import FlipMove from "react-flip-move";
+import Grid from "@material-ui/core/Grid";
 import axios from "../constants/axios";
 import VideoCard from "./VideoCard";
-import Grid from "@material-ui/core/Grid";
-import FlipMove from "react-flip-move";
 
 function CardContainer({ filter }) {
   const [movies, setMovies] = useState([]);

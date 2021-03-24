@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import TopNavigation from "./TopNavigation";
-import Home from "../pages/Home";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
+import TopNavigation from "./TopNavigation";
+import Home from "../pages/Home";
 import Footer from "./Footer";
 
 const useStyles = makeStyles({

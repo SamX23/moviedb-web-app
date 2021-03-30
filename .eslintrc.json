@@ -13,8 +13,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/jsx-filename-extension": 0,
-    "react/react-in-jsx-scope": 0,
-    "no-console": 0
+    "react/require-default-props": 0,
+    "no-console": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }

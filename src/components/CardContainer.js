@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FlipMove from "react-flip-move";
 import Grid from "@material-ui/core/Grid";
+import PropTypes from "prop-types";
 import axios from "../constants/axios";
 import VideoCard from "./VideoCard";
 
@@ -27,5 +28,9 @@ function CardContainer({ filter }) {
     </FlipMove>
   );
 }
+
+CardContainer.propTypes = {
+  filter: PropTypes.objectOf(PropTypes.object),
+};
 
 export default CardContainer;

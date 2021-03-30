@@ -2,7 +2,6 @@ import { forwardRef, useState } from "react";
 import movieTrailer from "movie-trailer";
 import Card from "@material-ui/core/Card";
 import TextTruncate from "react-text-truncate";
-import Youtube from "./YoutubeContainer";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   CardContent,
@@ -13,6 +12,8 @@ import {
   Button,
 } from "@material-ui/core";
 import { Favorite } from "@material-ui/icons";
+import PropTypes from "prop-types";
+import Youtube from "./YoutubeContainer";
 
 const videoCard = makeStyles({
   root: {
@@ -45,11 +46,11 @@ const VideoCard = forwardRef(({ movie }, ref) => {
   const [trailerURL, setTrailerURL] = useState("");
   const classes = videoCard();
 
-  const handleClick = (movie) => {
+  const handleClick = (item) => {
     if (trailerURL) {
       setTrailerURL("");
     } else {
-      movieTrailer(movie.title || movie.original_title || "")
+      movieTrailer(item.title || item.original_title || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setTrailerURL(urlParams.get("v"));
@@ -100,5 +101,9 @@ const VideoCard = forwardRef(({ movie }, ref) => {
     </Card>
   );
 });
+
+VideoCard.propTypes = {
+  movie: PropTypes.objectOf(PropTypes.object),
+};
 
 export default VideoCard;

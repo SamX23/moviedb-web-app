@@ -2,6 +2,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { styled } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
 import requests from "../constants/requests";
 
 const GridContainer = styled(Grid)({
@@ -62,5 +63,9 @@ function NavigationBar({ setFilter }) {
     </GridContainer>
   );
 }
+
+NavigationBar.propTypes = {
+  setFilter: PropTypes.func,
+};
 
 export default NavigationBar;

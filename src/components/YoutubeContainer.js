@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import YouTube from "react-youtube";
 
 export default function Youtube({ id }) {
@@ -15,3 +16,7 @@ export default function Youtube({ id }) {
 
   return <YouTube videoId={id} opts={opts} onReady={onReady} />;
 }
+
+Youtube.propTypes = {
+  id: PropTypes.number,
+};

@@ -12,9 +12,9 @@ export default function Footer() {
     width: "100%",
     textAlign: "center",
     padding: "5px",
-    backgroundColor: "black",
+    backgroundColor: "#3a6073",
     "& a": {
-      color: "rgb(253, 69, 69)",
+      color: "#f40056",
       textDecoration: "none",
     },
   });

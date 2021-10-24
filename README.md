@@ -39,5 +39,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 ## License
 
 MIT
-
-<!-- firebase deploy --only hosting:simple-moviedb -->

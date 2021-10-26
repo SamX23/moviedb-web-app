@@ -5,6 +5,7 @@ import Link from "@material-ui/core/Link";
 import { styled } from "@material-ui/core/styles";
 
 export default function Footer() {
+  const thisYear = new Date().getFullYear();
   const FooterContainer = styled(Box)({
     position: "fixed",
     left: 0,
@@ -28,7 +29,7 @@ export default function Footer() {
         </span>{" "}
         by
         <Link href="https://samx23.github.io"> Sami Kalammallah</Link> ©{" "}
-        {new Date().getFullYear()}
+        {thisYear}
       </Typography>
     </FooterContainer>
   );

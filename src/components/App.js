@@ -12,6 +12,7 @@ const useStyles = makeStyles({
       "linear-gradient(149deg, rgba(38,73,122,1) 0%, rgba(13,60,139,1) 47%, rgba(55,221,255,1) 100%)",
     color: "white",
     paddingBottom: "3em",
+    fontFamily: "sans-serif",
   },
 });
 

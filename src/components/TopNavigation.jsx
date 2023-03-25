@@ -55,7 +55,7 @@ function TopNavigation() {
     <Grid
       className={classes.root}
       container
-      justify="space-between"
+      justifyContent="space-between"
       alignItems="center"
     >
       <Grid className={classes.search}>

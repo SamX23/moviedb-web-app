@@ -15,7 +15,7 @@ export default function Loading() {
     <Grid
       className={style.root}
       container
-      justify="space-evenly"
+      justifyContent="space-evenly"
       alignItems="center"
     >
       <CircularProgress />

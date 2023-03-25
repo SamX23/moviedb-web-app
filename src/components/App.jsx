@@ -25,7 +25,7 @@ function App() {
         className={appBackground.root}
         container
         direction="column"
-        justify="center"
+        justifyContent="center"
         alignItems="center"
         spacing={2}
       >

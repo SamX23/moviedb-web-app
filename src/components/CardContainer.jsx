@@ -19,7 +19,7 @@ function CardContainer({ filter }) {
     <FlipMove
       typeName={Grid}
       container
-      justify="space-evenly"
+      justifyContent="space-evenly"
       alignItems="center"
     >
       {movies &&

@@ -103,7 +103,8 @@ const VideoCard = forwardRef(({ movie }, ref) => {
 });
 
 VideoCard.propTypes = {
-  movie: PropTypes.objectOf(PropTypes.object),
+  // eslint-disable-next-line react/forbid-prop-types
+  movie: PropTypes.any,
 };
 
 export default VideoCard;

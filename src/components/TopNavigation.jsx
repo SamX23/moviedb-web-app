@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
 import Button from "@material-ui/core/Button";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { alpha, makeStyles } from "@material-ui/core/styles";
 import SearchBar from "./SearchBar";
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: ".2em",
     marginTop: "1.2em",
     borderRadius: 999,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
     width: "100%",
     [theme.breakpoints.up("sm")]: {

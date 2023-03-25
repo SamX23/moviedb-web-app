@@ -1,6 +1,7 @@
 import { makeStyles, useScrollTrigger, Zoom, Fab } from "@material-ui/core";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import PropTypes from "prop-types";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,10 +11,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ScrollTop = ({ children, window }) => {
+const ScrollTop = ({ children }) => {
   const classes = useStyles();
   const trigger = useScrollTrigger({
-    target: window,
+    target: undefined,
     disableHysteresis: true,
     threshold: 100,
   });
@@ -48,6 +49,5 @@ export default function BackToTop() {
 }
 
 ScrollTop.propTypes = {
-  children: PropTypes.objectOf(PropTypes.node),
-  window: PropTypes.objectOf(PropTypes.any),
+  children: React.Component,
 };

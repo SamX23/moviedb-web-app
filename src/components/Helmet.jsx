@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
+import React from "react";
 
 const Head = ({ title, desc, children }) => (
   <>
@@ -22,5 +23,5 @@ export default Head;
 Head.propTypes = {
   title: PropTypes.string,
   desc: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.node),
+  children: React.Component,
 };

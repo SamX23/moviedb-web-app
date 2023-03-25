@@ -30,7 +30,7 @@ function CardContainer({ filter }) {
 }
 
 CardContainer.propTypes = {
-  filter: PropTypes.objectOf(PropTypes.object),
+  filter: PropTypes.string,
 };
 
 export default CardContainer;

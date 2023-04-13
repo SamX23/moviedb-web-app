@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import App from "./components/App";
 import Head from "./components/Helmet";
+import "./styles/index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

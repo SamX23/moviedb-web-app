@@ -8,9 +8,7 @@ import SearchContext from "../context";
 import { MOVIE_GENRE } from "../constants/genre";
 
 const GridContainer = styled(Grid)({
-  paddingTop: "1em",
-  paddingBottom: "1em",
-  marginBottom: ".5em",
+  margin: "1rem 0",
 });
 
 const GridItem = styled(Button)({

@@ -66,7 +66,7 @@ function TopNavigation() {
       </Grid>
       <Grid className={classes.logo}>
         <Button component={Link} to="/" className={classes.icon}>
-          <HomeIcon />
+          <HomeIcon style={{ marginRight: ".5rem" }} />
           <h2>Movie DB</h2>
         </Button>
       </Grid>

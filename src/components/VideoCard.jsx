@@ -68,6 +68,8 @@ const VideoCard = forwardRef(({ movie }, ref) => {
           component="img"
           src={`${videoBaseUrl}${movie.backdrop_path || movie.poster_path}`}
           title={movie.title}
+          lazy="true"
+          height={200}
         />
       )}
       <CardContent className={classes.content}>

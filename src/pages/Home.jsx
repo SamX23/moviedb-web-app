@@ -1,20 +1,24 @@
 import { lazy, Suspense } from "react";
-import Grid from "@material-ui/core/Grid";
+import Layout from "../components/layouts/Layout";
 import Loading from "../components/Loading";
 import NavigationBar from "../components/NavigationBar";
 import BackToTop from "../components/BackToTop";
+import TopNavigation from "../components/TopNavigation";
+import Footer from "../components/Footer";
 
 const CardContainer = lazy(() => import("../components/CardContainer"));
 
 function Home() {
   return (
-    <Grid container>
+    <Layout>
+      <TopNavigation />
       <NavigationBar />
       <Suspense fallback={<Loading />}>
         <CardContainer />
       </Suspense>
+      <Footer />
       <BackToTop />
-    </Grid>
+    </Layout>
   );
 }
 

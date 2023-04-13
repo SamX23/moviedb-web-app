@@ -4,7 +4,8 @@ A simple movie database for people who only needs to know what is trending or la
 
 ## Technology used
 
-- React Js
+- React 18
+- Vite
 - Material UI/Icon
 - Axios
 - React Flip move
@@ -17,13 +18,11 @@ Gain your API Key from [TMDB](https://www.themoviedb.org/) then put it under .en
 
 ```sh
 $ git clone "https://github.com/SamX23/moviedb-web-app.git"
-$ yarn
-$ yarn start
+$ npm install
+$ npm run dev
 ```
 
 ## Homework
-
-- Search icons
 - Detail page (future development)
 
 ### Making a Progressive Web App

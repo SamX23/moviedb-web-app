@@ -1,19 +1,36 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState, useCallback } from "react";
 import FlipMove from "react-flip-move";
 import Grid from "@material-ui/core/Grid";
-import PropTypes from "prop-types";
 import axios from "../constants/axios";
 import VideoCard from "./VideoCard";
+import SearchContext from "../context";
+import { API_KEY, URL } from "../constants/tmdb";
 
-function CardContainer({ filter }) {
+function CardContainer() {
+  const { searchQuery, movieCategory } = useContext(SearchContext);
   const [movies, setMovies] = useState([]);
 
+  const fetchData = useCallback(async (query) => {
+    try {
+      const movieResult = await axios.get(query);
+      setMovies(movieResult.data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   useEffect(() => {
-    axios
-      .get(filter)
-      .then((e) => setMovies(e.data.results))
-      .catch((e) => console.log(e));
-  }, [filter]);
+    const query =
+      searchQuery === ""
+        ? `${URL}discover/movie?with_genres=${movieCategory}&api_key=${API_KEY}`
+        : `${URL}search/movie?api_key=${API_KEY}&query=${searchQuery}`;
+
+    const getData = setTimeout(() => {
+      fetchData(query);
+    }, 1000);
+
+    return () => clearTimeout(getData);
+  }, [searchQuery, movieCategory]);
 
   return (
     <FlipMove
@@ -28,9 +45,5 @@ function CardContainer({ filter }) {
     </FlipMove>
   );
 }
-
-CardContainer.propTypes = {
-  filter: PropTypes.string,
-};
 
 export default CardContainer;

@@ -1,9 +1,11 @@
+/* eslint-disable react/no-array-index-key */
+import { useContext } from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import { styled } from "@material-ui/core/styles";
-import PropTypes from "prop-types";
-import requests from "../constants/requests";
+import SearchContext from "../context";
+import { MOVIE_GENRE } from "../constants/genre";
 
 const GridContainer = styled(Grid)({
   paddingTop: "1em",
@@ -21,7 +23,14 @@ const GridItem = styled(Button)({
   },
 });
 
-function NavigationBar({ setFilter }) {
+function NavigationBar() {
+  const { setMovieCategory, setSearchQuery } = useContext(SearchContext);
+
+  const handleClick = (id) => {
+    setSearchQuery("");
+    setMovieCategory(id);
+  };
+
   return (
     <GridContainer
       container
@@ -30,42 +39,17 @@ function NavigationBar({ setFilter }) {
       alignItems="center"
       id="back-to-top-anchor"
     >
-      <GridItem onClick={() => setFilter(requests.fetchTrending)}>
+      <GridItem onClick={() => handleClick("")}>
         <FlashOnIcon />
-        Trending
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchTopRated)}>
         Top Rated
       </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchAction)}>
-        Action
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchComedy)}>
-        Comedy
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchHorror)}>
-        Horror
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchRomance)}>
-        Romance
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchMystery)}>
-        Mystery
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchSciFi)}>Sci-fi</GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchWestern)}>
-        Western
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchAnimation)}>
-        Animation
-      </GridItem>
-      <GridItem onClick={() => setFilter(requests.fetchTV)}>TV</GridItem>
+      {MOVIE_GENRE.map((genre, key) => (
+        <GridItem key={key} onClick={() => handleClick(genre.id)}>
+          {genre.title}
+        </GridItem>
+      ))}
     </GridContainer>
   );
 }
-
-NavigationBar.propTypes = {
-  setFilter: PropTypes.func,
-};
 
 export default NavigationBar;

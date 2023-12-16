@@ -1,6 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import Layout from "../components/layouts/Layout";
-import Loading from "../components/Loading";
 import NavigationBar from "../components/NavigationBar";
 import BackToTop from "../components/BackToTop";
 import TopNavigation from "../components/TopNavigation";
@@ -13,9 +12,7 @@ function Home() {
     <Layout>
       <TopNavigation />
       <NavigationBar />
-      <Suspense fallback={<Loading />}>
-        <CardContainer />
-      </Suspense>
+      <CardContainer />
       <Footer />
       <BackToTop />
     </Layout>

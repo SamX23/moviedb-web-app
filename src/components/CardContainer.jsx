@@ -5,6 +5,7 @@ import axios from "../constants/axios";
 import VideoCard from "./VideoCard";
 import SearchContext from "../context";
 import { API_KEY, URL } from "../constants/tmdb";
+import Loading from "./Loading";
 
 function CardContainer() {
   const { searchQuery, movieCategory } = useContext(SearchContext);
@@ -33,15 +34,12 @@ function CardContainer() {
   }, [searchQuery, movieCategory]);
 
   return (
-    <FlipMove
-      typeName={Grid}
-      container
-      justifyContent="space-evenly"
-      alignItems="center"
-    >
-      {movies &&
-        movies.length > 0 &&
-        movies.map((movie) => <VideoCard item key={movie.id} movie={movie} />)}
+    <FlipMove typeName={Grid} container justifyContent="start">
+      {movies?.length > 0 ? (
+        movies.map((movie) => <VideoCard key={movie.id} item movie={movie} />)
+      ) : (
+        <Loading />
+      )}
     </FlipMove>
   );
 }

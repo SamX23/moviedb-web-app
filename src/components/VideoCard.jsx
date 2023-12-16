@@ -14,6 +14,7 @@ import {
 import { Favorite } from "@material-ui/icons";
 import PropTypes from "prop-types";
 import Youtube from "./YoutubeContainer";
+import { videoBaseUrl } from "../constants";
 
 const videoCard = makeStyles({
   root: {
@@ -41,7 +42,6 @@ const videoCard = makeStyles({
   },
 });
 
-const videoBaseUrl = "https://image.tmdb.org/t/p/original/";
 const VideoCard = forwardRef(({ movie }, ref) => {
   const [trailerURL, setTrailerURL] = useState("");
   const classes = videoCard();

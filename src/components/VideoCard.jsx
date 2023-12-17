@@ -23,11 +23,17 @@ const videoCard = makeStyles({
     minHeight: 350,
     margin: "5px",
     borderRadius: "10px",
+    flexGrow: 1,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
   action: {
-    margin: 0,
-    padding: 0,
+    margin: 5,
+    padding: 2,
     color: "#e6e6e6",
+    display: "flex",
+    justifyContent: "space-between",
   },
   icon: {
     color: "white",
@@ -73,7 +79,7 @@ const VideoCard = forwardRef(({ movie }, ref) => {
         />
       )}
       <CardContent className={classes.content}>
-        <Typography variant="h5" component="h3">
+        <Typography variant="h3">
           {movie.title || movie.original_name}
         </Typography>
         <TextTruncate
@@ -82,9 +88,13 @@ const VideoCard = forwardRef(({ movie }, ref) => {
           truncateText=".."
           text={movie.overview}
         />
-        <Typography>
-          {movie.media_type && `${movie.media_type.toUpperCase()} - `}
-          {movie.release_date || movie.first_air_date}
+        <Typography
+          style={{
+            fontWeight: "bold",
+            marginTop: ".5rem",
+          }}
+        >
+          Released at {movie.release_date || movie.first_air_date}
         </Typography>
       </CardContent>
       <CardActions className={classes.action}>
@@ -96,8 +106,13 @@ const VideoCard = forwardRef(({ movie }, ref) => {
           onClick={() => handleClick(movie)}
           size="small"
           color="secondary"
+          style={{
+            backgroundColor: "#e6e6e6",
+            borderRadius: "10px",
+            padding: ".25rem .5rem",
+          }}
         >
-          Trailer {trailerURL ? `On` : "Off"}
+          {trailerURL ? `Hide` : "Show"} Trailer
         </Button>
       </CardActions>
     </Card>

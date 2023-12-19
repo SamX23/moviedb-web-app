@@ -26,8 +26,7 @@ export default function Footer() {
         <span role="img" aria-label="love">
           ♥️
         </span>{" "}
-        by
-        <Link href="https://samx23.github.io"> Sami Kalammallah</Link> ©{" "}
+        by <Link href="https://samx23.github.io">Sami Kalammallah</Link> ©{" "}
         {thisYear}
       </Typography>
     </FooterContainer>

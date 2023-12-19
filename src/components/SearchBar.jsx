@@ -34,7 +34,7 @@ export default function SearchBar() {
 
   return (
     <InputBase
-      placeholder="Search…"
+      placeholder="Search title…"
       classes={{
         root: classes.inputRoot,
         input: classes.inputInput,

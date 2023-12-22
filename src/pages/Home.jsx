@@ -7,16 +7,14 @@ import Footer from "../components/Footer";
 
 const CardContainer = lazy(() => import("../components/CardContainer"));
 
-function Home() {
-  return (
-    <Layout>
-      <TopNavigation />
-      <NavigationBar />
-      <CardContainer />
-      <Footer />
-      <BackToTop />
-    </Layout>
-  );
-}
+const Home = () => (
+  <Layout>
+    <TopNavigation />
+    <NavigationBar />
+    <CardContainer />
+    <Footer />
+    <BackToTop />
+  </Layout>
+);
 
 export default Home;

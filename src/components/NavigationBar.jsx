@@ -24,7 +24,7 @@ const GridItem = styled(Button)({
 function NavigationBar() {
   const { setMovieCategory, setSearchQuery } = useContext(SearchContext);
 
-  const handleClick = (id) => {
+  const handleClick = (id = "") => {
     setSearchQuery("");
     setMovieCategory(id);
   };
@@ -37,7 +37,7 @@ function NavigationBar() {
       alignItems="center"
       id="back-to-top-anchor"
     >
-      <GridItem onClick={() => handleClick("")}>
+      <GridItem onClick={handleClick}>
         <FlashOnIcon />
         Top Rated
       </GridItem>

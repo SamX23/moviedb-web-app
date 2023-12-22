@@ -10,9 +10,7 @@ export default function Youtube({ id }) {
     },
   };
 
-  const onReady = (event) => {
-    event.target.pauseVideo();
-  };
+  const onReady = (event) => event.target.pauseVideo();
 
   return <YouTube videoId={id} opts={opts} onReady={onReady} />;
 }
